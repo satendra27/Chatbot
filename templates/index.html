@@ -226,7 +226,7 @@
 
     <div class="input-area">
         <input type="text" id="user-input" placeholder="Type your query...">
-        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        <button onclick="sendMessage()" ><i class="fas fa-paper-plane"></i></button>
     </div>
 </div>
 
@@ -279,6 +279,13 @@
         })
         .catch(error => console.error('Error:', error));
     }
+
+    document.getElementById("user-input").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();  // Prevent default form submission behavior (if any)
+            sendMessage();  // Call the sendMessage function
+        }
+    });
 
     function selectChat(chatId) {
         activeChatId = chatId;
