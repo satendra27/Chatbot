@@ -3,8 +3,7 @@ import os
 from flask import Flask, render_template, request, jsonify
 
 # Set your API key for Google Generative AI
-os.environ["GOOGLE_API_KEY"] = "AIzaSyBg6-xTEEppzlgJEE17IjkTpR6TbV2zsrw"
-genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # Initialize the model
 model = genai.GenerativeModel("models/gemini-pro")
@@ -19,7 +18,7 @@ def AIResponse(prompt, chat_history=None):
     # If there is any chat history, append it to the current prompt
     if chat_history:
         context = "\n".join(
-            [f"User: {msg['text']}" if msg['text'].startswith('User') else f"AI: {msg['text']}" for msg in
+            [f"User: {msg['text']}" if msg['text'].startswith('User') else f"{msg['text']}" for msg in
              chat_history])
         prompt = f"{context}\nUser: {prompt}\nAI:"
 
