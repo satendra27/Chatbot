@@ -3,20 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="static/img.png">
+    <link rel="icon" href="static/img.png" type="image/png">
     <title>ChatGPT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        height: 100vh;
-        margin: 0;
-        background-color: #ecf0f1;
-        transition: background-color 0.3s, zoom 0.3s;
-    }
+    
     .slidebar {
     height: 100vh;
     background-color: #333;
@@ -158,12 +151,19 @@
         background-color: #2980b9;
     }
     @media screen and (min-width: 601px){
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            background-color: #ecf0f1;
+            transition: background-color 0.3s, zoom 0.3s;
+        }
         .slidebar{
             width:250px;
         }
         .main-content {
             margin-left: 250px;
-            padding: 10px;
             transition: margin-left 0.3s ease; /* Smooth transition when sidebar collapses */
             overflow: hidden; /* Ensure no scrollbars within the content */
         }
@@ -222,9 +222,15 @@
         }
     }
     @media screen and (max-width: 600px) {
-        body {
-            overflow-x: hidden; /* Prevent horizontal scrollbar */
-        }
+        
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                height: 97.5vh;
+                margin: 0;
+                background-color: #ecf0f1;
+                transition: background-color 0.3s, zoom 0.3s;
+            }
         .slidebar{
             width:0;
         }
@@ -278,7 +284,6 @@
     
         .main-content {
             margin-left:0;
-            padding: 10px;
             transition: margin-left 0.3s ease; /* Smooth transition when sidebar collapses */
             overflow: hidden; /* Ensure no scrollbars within the content */
         }
@@ -347,6 +352,7 @@
   
       .content {
         padding: 20px;
+        padding-bottom:0;
         width: calc(100% - 250px);  /* Adjusts content width when sidebar is open */
         transition: margin-left 0.3s ease;  /* Smooth transition */
       }
@@ -400,8 +406,9 @@
         <input type="text" id="user-input" placeholder="Type your query...">
         <button onclick="sendMessage()" ><i class="fas fa-paper-plane"></i></button>
     </div>
-</div>
 
+    <p style="height:10px;margin:0;text-align:center;margin:10px;font-size:10px;">ChatGPT Version:1.0.1.1.2</p>
+</div>
 
 <!-- The Modal -->
 <div id="settingsModal" class="modal">
