@@ -220,6 +220,25 @@
         margin-bottom: 10px;
         word-wrap: break-word;
         }
+        .zoom-in-out{
+            padding:5px;
+            margin-bottom:5px;
+            background-color:#e74c3c;
+            color:white;
+            border-color:#e74c3c;
+            border-radius:2px;
+        }
+        .close-btn{
+            padding:5px;
+            margin:4px;
+            background-color:#e74c3c;
+            color:white;
+            border-color:#e74c3c;
+            border-radius:2px;
+        }
+        h3{
+            margin-top:5px;
+        }
     }
     @media screen and (max-width: 600px) {
         
@@ -424,12 +443,11 @@
             <div class="theme-option" onclick="changeTheme('light')">Light</div>
             <div class="theme-option" onclick="changeTheme('blue')">Blue</div>
             <hr>
-            <h3>Zoom</h3>
-            <button onclick="zoomIn()">Zoom In</button>
-            <button onclick="zoomOut()">Zoom Out</button>
+            <button onclick="zoomIn()" class="zoom-in-out">Zoom In</button>
+            <button onclick="zoomOut()"class="zoom-in-out">Zoom Out</button>
         </div>
         <div class="modal-footer">
-            <button onclick="closeSettings()">Close</button>
+            <button onclick="closeSettings()" class="close-btn">Close</button>
         </div>
     </div>
 </div>
