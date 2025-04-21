@@ -7,7 +7,7 @@ os.environ["GOOGLE_API_KEY"] = "AIzaSyBg6-xTEEppzlgJEE17IjkTpR6TbV2zsrw"
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
 # Initialize the model
-model = genai.GenerativeModel("models/gemini-pro")
+model = genai.GenerativeModel("gemini-1.5-flash")
 # app
 app = Flask(__name__)
 # Store chats in memory (or use a database for persistence in production)
